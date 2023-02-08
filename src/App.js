@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import HeaderLight from './img/bg-desktop-light.jpg'
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='headerimageLight' >
+        <img src={HeaderLight}alt='header daylight mode'/>
+      </div>
+      {/* <div className='white-block'></div> */}
+      <div className='block'></div>
+      <div className='block'></div>
     </div>
   );
 }
