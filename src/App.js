@@ -1,5 +1,6 @@
 import './App.scss';
 import HeaderLight from './img/bg-desktop-light.jpg'
+import {ReactComponent as IconCheck} from './img/icon-check.svg';
 
 const App = () => {
   return (
@@ -13,14 +14,80 @@ const App = () => {
         </div>
         <div className='input-container'>
           <div className='checkbox-container'>
-          0
+            <div className='circle-container'>
+            </div>
           </div>
           <div className='input-container-2'>
-            currently typing
+            <span>Currently typing</span>
           </div>
         <div>
 
           </div>
+        </div>
+        <div className='task-container'>
+          <div className='input-container'>
+            <div className='checkbox-container'>
+              <div className='circle-container'>
+              </div>
+            </div>
+            <div className='input-container-2'>
+              <span>Currently typing</span>
+          </div>
+          <div>
+        </div>
+        </div>
+        </div>
+        <div className='task-container'>
+          <div className='input-container'>
+            <div className='checkbox-container'>
+              <div className='circle-container'>
+              </div>
+            </div>
+            <div className='input-container-2'>
+              <span>Currently typing</span>
+          </div>
+          <div>
+        </div>
+        </div>
+        </div>
+        <div className='task-container'>
+          <div className='input-container'>
+            <div className='checkbox-container'>
+              <div className='circle-container'>
+              </div>
+            </div>
+            <div className='input-container-2'>
+              <span>Currently typing</span>
+          </div>
+          <div>
+        </div>
+        </div>
+        </div>
+        <div className='task-container'>
+          <div className='input-container'>
+            <div className='checkbox-container'>
+              <div className='circle-container'>
+              </div>
+            </div>
+            <div className='input-container-2'>
+              <span>Currently typing</span>
+          </div>
+          <div>
+        </div>
+        </div>
+        </div>
+        <div className='task-container'>
+          <div className='input-container'>
+            <div className='checkbox-container'>
+              <div className='circle-container'>
+              </div>
+            </div>
+            <div className='input-container-2'>
+              <span>Currently typing</span>
+          </div>
+          <div>
+        </div>
+        </div>
         </div>
       </div>
     </div>
