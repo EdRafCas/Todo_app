@@ -22,7 +22,7 @@
     width:1000px;
     height:1000px;
     /* background-color: black; */
-    border:1px red solid;
+   /*  border:1px red solid; */
     z-index:2;
     .header-top{
       border:1px black solid;
@@ -59,7 +59,7 @@
             height:40%;
           }
         }
-        .input-container-2{
+        .input-container-inner{
           padding:5px;
           span{
             font-size: 25px;
@@ -68,19 +68,28 @@
           }
         }
     }
-    .task-container{
-      .input-container{
+    .tasklist-container{
+      border-radius: 20px;
+      /* border:1px red solid; */
+      border-collapse: separate;
+      overflow:hidden;
+      box-shadow: 
+      2px 0 0 0 #888, 
+      0 2px 0 0 #888, 
+      2px 2px 0 0 #888,   /* Just to fix the corner */
+      2px 0 0 0 #888 inset, 
+      0 2px 0 0 #888 inset;
+      .input-container-list{
         height:100px;
-        border:1px red solid;
+        /* border:1px red solid; */
         display:flex;
         flex-direction:row;
         align-items: center;
         background-color: #fff;
-        border-radius: 12px;
           .checkbox-container{
             display:grid;
             place-items:center;
-            border:1px red solid;
+            /* border:1px red solid; */
             width:100px;
             height:100%;
             .circle-container{
@@ -90,7 +99,7 @@
               height:40%;
             }
           }
-          .input-container-2{
+          .input-container-inner{
             padding:5px;
             span{
               font-size: 25px;
