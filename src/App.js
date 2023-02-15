@@ -1,12 +1,14 @@
+import React,{useState} from 'react';
 import './App.scss';
 import HeaderLight from './img/bg-desktop-light.jpg'
 import {ReactComponent as IconCheck} from './img/icon-check.svg';
 
 
 
+
 const App = () => {
 
-  const Activities =[
+  const List =[
     {id:1,
       actitivyNote:"Camping",
       status:"incomplete"
@@ -22,6 +24,30 @@ const App = () => {
       status:"incomplete"
     }
   ]
+
+  const [typing, changeTyping] = useState("type here")
+  const [existingtList, changeExistingList] = useState(List)
+
+  const handleChange = (e) =>{
+    if(e.target.name==="task_box"){
+      changeTyping(e.target.value)
+    }
+  };
+
+  const handleAdd = (e) =>{
+
+    const newList = [existingtList.push(
+      {id:4,
+        actitivyNote:typing,
+        status:"incomplete"
+      }
+    )]
+    changeExistingList(newList)
+    changeTyping('')
+
+  }
+ 
+
   return (
   <div className='container'>
     <div className='headerimageLight' >
@@ -36,30 +62,43 @@ const App = () => {
           <div className='circle-container'></div>
         </div>
         <div className='input-container-inner'>
-          <span>Currently typing</span>
+         <input
+          name="task_box"
+          id="task_box"
+          onChange={handleChange}
+          maxLength={40}
+          type="text"
+          placeholder="Leave us your message here"
+          value={typing}/>
+          <button 
+            type="button"
+            onClick={handleAdd}>
+            sent
+          </button>
         </div>
       </div>
-      <div className='tasklist-container'>
-      {Activities.map((Act, index)=>{
+
+      <ul className='tasklist-container'>
+      {existingtList.map((item, index)=>{
         return(
-          <div className='input-container-list' key={Act.id}>
+          <li className='input-container-list' key={item.id}>
             <div className='checkbox-container'>
               <div className='circle-container'></div>
             </div>
             <div className='input-container-inner'>
-              <span>{Act.actitivyNote}</span>
+              <span>{item.actitivyNote}</span>
             </div>
-          </div>
+          </li>
         )
       })}
-       
-        <div className='input-container-list'>
-          <div className='checkbox-container'>
-            <div className='circle-container'></div>
-          </div>
-          <div className='input-container-inner'>
-            <span>EndMan</span>
-          </div>
+      </ul>
+
+      <div className='input-container-list'>
+        <div className='checkbox-container'>
+          <div className='circle-container'></div>
+        </div>
+        <div className='input-container-inner'>
+          <span>EndMan</span>
         </div>
       </div>
     </div>
