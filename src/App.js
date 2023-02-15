@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import './App.scss';
 import HeaderLight from './img/bg-desktop-light.jpg'
 import {ReactComponent as IconCheck} from './img/icon-check.svg';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -26,7 +27,7 @@ const App = () => {
   ]
 
   const [typing, changeTyping] = useState("type here")
-  const [existingtList, changeExistingList] = useState(List)
+  const [existingtList, changeExistingList] = useState([])
 
   const handleChange = (e) =>{
     if(e.target.name==="task_box"){
@@ -35,15 +36,21 @@ const App = () => {
   };
 
   const handleAdd = (e) =>{
+    e.preventDefault();
 
-    const newList = [existingtList.push(
-      {id:4,
-        actitivyNote:typing,
-        status:"incomplete"
-      }
-    )]
-    changeExistingList(newList)
-    changeTyping('')
+    if(typing.length > 0){
+      const newList = [...existingtList]
+      
+      newList.push(
+        {
+          id:uuidv4(),
+          actitivyNote:typing,
+          status:"incomplete"
+        }
+      );
+      changeExistingList(newList)
+      changeTyping('')
+    }
 
   }
  
