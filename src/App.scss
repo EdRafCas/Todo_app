@@ -25,10 +25,11 @@
    /*  border:1px red solid; */
     z-index:2;
     .header-top{
+      margin-top:50px;
       border:1px black solid;
       padding:5px;
       padding-left:0px;
-      margin-bottom:50px;
+      margin-bottom:100px;
       span{
         font-size:50px;
         letter-spacing: 20px;
@@ -45,7 +46,7 @@
       align-items: center;
       background-color: #fff;
       border-radius: 12px;
-      margin-bottom:20px;
+      margin-bottom:50px;
         .checkbox-container{
           display:grid;
           place-items:center;
@@ -79,12 +80,8 @@
       /* border:1px red solid; */
       border-collapse: separate;
       overflow:hidden;
-      box-shadow: 
-      2px 0 0 0 #888, 
-      0 2px 0 0 #888, 
-      2px 2px 0 0 #888,   /* Just to fix the corner */
-      2px 0 0 0 #888 inset, 
-      0 2px 0 0 #888 inset;
+      border: 1px grey solid;
+      
       .input-container-list{
         height:100px;
         /* border:1px red solid; */

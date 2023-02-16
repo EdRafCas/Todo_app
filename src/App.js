@@ -26,7 +26,7 @@ const App = () => {
     }
   ]
 
-  const [typing, changeTyping] = useState("type here")
+  const [typing, changeTyping] = useState("")
   const [existingtList, changeExistingList] = useState([])
 
   const handleChange = (e) =>{
