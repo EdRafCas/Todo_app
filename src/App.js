@@ -98,16 +98,14 @@ const App = () => {
           </li>
         )
       })}
+        <div className='input-container-list'>
+          <div className='input-container-inner'>
+            <span>EndMan</span>
+          </div>
+        </div>
       </ul>
 
-      <div className='input-container-list'>
-        <div className='checkbox-container'>
-          <div className='circle-container'></div>
-        </div>
-        <div className='input-container-inner'>
-          <span>EndMan</span>
-        </div>
-      </div>
+      
     </div>
   </div>
   );

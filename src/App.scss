@@ -80,11 +80,12 @@
       /* border:1px red solid; */
       border-collapse: separate;
       overflow:hidden;
-      border: 1px grey solid;
-      
+      /* border: 1px grey solid; */
+      padding-left:0px;
+      box-shadow: 0 0 0 1px red;
       .input-container-list{
         height:100px;
-        /* border:1px red solid; */
+        /* border: 1px grey solid; */
         display:flex;
         flex-direction:row;
         align-items: center;
