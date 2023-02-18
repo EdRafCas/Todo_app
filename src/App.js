@@ -98,9 +98,13 @@ const App = () => {
           </li>
         )
       })}
-        <div className='input-container-list'>
-          <div className='input-container-inner'>
-            <span>EndMan</span>
+        <div className='input-container-list crisis' >
+          <div className='input-container-counter'>
+            <span>{existingtList.length} items left</span>
+            <span> All </span>
+            <span> Active</span>
+            <span> Completed</span>
+            <span> Clear Completed</span>
           </div>
         </div>
       </ul>

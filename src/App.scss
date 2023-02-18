@@ -104,6 +104,7 @@
             }
           }
           .input-container-inner{
+            /* border:1px red solid; */
             padding:5px;
             span{
               font-size: 25px;
@@ -111,7 +112,28 @@
               letter-spacing: 1px;
             }
           }
+          .input-container-counter{
+            width:100%;
+            display:flex;
+            justify-content:space-around;
+            border:1px red solid;
+            padding:5px;
+            span{
+              font-size: 18px;
+              font-weight: 400;
+              letter-spacing: 1px;
+              cursor: pointer;
+              &:hover{
+                color:blue;
+              }
+             
+            }
+          }
       }
     }
   }
+}
+
+.crisis{
+  border-top: 1px grey solid;
 }
