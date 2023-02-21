@@ -11,7 +11,7 @@
     top:0;
     left:0;
     z-index:1;
-    border:1px red solid;
+    /* border:1px red solid; */
     width:100%;
     img{
       width:100%;
@@ -25,18 +25,31 @@
    /*  border:1px red solid; */
     z-index:2;
     .header-top{
+      display:flex;
+      flex-direction:row;
+      justify-content: space-between;
       margin-top:50px;
       border:1px black solid;
       padding:5px;
       padding-left:0px;
-      margin-bottom:100px;
+      margin-bottom:50px;
       span{
-        font-size:50px;
+        font-size:60px;
         letter-spacing: 20px;
         font-weight:600;
         color:#fff;
 
       }
+    }
+    .iconContainer{
+  
+      display:grid;
+      place-items: center;
+       border:1px red solid;
+       svg{
+        height:40px;
+        width:40px;
+       }
     }
     .input-container{
       height:100px;
@@ -82,10 +95,9 @@
       overflow:hidden;
       /* border: 1px grey solid; */
       padding-left:0px;
-      box-shadow: 0 0 0 1px red;
+      box-shadow: 0 0 0 1px grey;
       .input-container-list{
         height:100px;
-        /* border: 1px grey solid; */
         display:flex;
         flex-direction:row;
         align-items: center;
@@ -116,7 +128,7 @@
             width:100%;
             display:flex;
             justify-content:space-around;
-            border:1px red solid;
+            /* border:1px red solid; */
             padding:5px;
             span{
               font-size: 18px;
@@ -125,6 +137,7 @@
               cursor: pointer;
               &:hover{
                 color:blue;
+                font-weight: 600;
               }
              
             }
@@ -135,5 +148,5 @@
 }
 
 .crisis{
-  border-top: 1px grey solid;
+  border-bottom: 1px grey solid;
 }

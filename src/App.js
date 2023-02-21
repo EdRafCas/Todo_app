@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import './App.scss';
 import HeaderLight from './img/bg-desktop-light.jpg'
 import {ReactComponent as IconCheck} from './img/icon-check.svg';
+import {ReactComponent as IconMoon} from './img/icon-moon.svg';
+import {ReactComponent as IconSun} from './img/icon-sun.svg';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -28,6 +30,8 @@ const App = () => {
 
   const [typing, changeTyping] = useState("")
   const [existingtList, changeExistingList] = useState([])
+  const [mode, changeMode] = useState(false)
+
 
   const handleChange = (e) =>{
     if(e.target.name==="task_box"){
@@ -53,6 +57,13 @@ const App = () => {
     }
 
   }
+
+  const handleKeypress = (e) => {
+    
+    if (e.key === "Enter") {
+      handleAdd(e);
+    }
+  };
  
 
   return (
@@ -63,6 +74,14 @@ const App = () => {
     <div className='block'>
       <div className='header-top'>
         <span>TODO</span>
+        <div className ='iconContainer'>
+          {
+            mode?
+            <IconSun onClick={()=>changeMode(!mode)} viewBox='0 0 26 26'/>
+            :
+            <IconMoon  onClick={()=>changeMode(!mode)} viewBox='0 0 26 26'/>
+          }
+        </div>
       </div>
       <div className='input-container'>
         <div className='checkbox-container'>
@@ -76,9 +95,10 @@ const App = () => {
           maxLength={40}
           type="text"
           placeholder="Leave us your message here"
-          value={typing}/>
+          value={typing}
+          onKeyPress={handleKeypress}/>
           <button 
-            type="button"
+            type="submit"
             onClick={handleAdd}>
             sent
           </button>
@@ -88,7 +108,7 @@ const App = () => {
       <ul className='tasklist-container'>
       {existingtList.map((item, index)=>{
         return(
-          <li className='input-container-list' key={item.id}>
+          <li className='input-container-list crisis' key={item.id}>
             <div className='checkbox-container'>
               <div className='circle-container'></div>
             </div>
@@ -98,7 +118,7 @@ const App = () => {
           </li>
         )
       })}
-        <div className='input-container-list crisis' >
+        <div className='input-container-list' >
           <div className='input-container-counter'>
             <span>{existingtList.length} items left</span>
             <span> All </span>
