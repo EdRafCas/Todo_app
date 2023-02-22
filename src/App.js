@@ -30,7 +30,7 @@ const App = () => {
 
   const [typing, changeTyping] = useState("")
   const [existingtList, changeExistingList] = useState([])
-  const [mode, changeMode] = useState(false)
+  const [mode, changeMode] = useState("dark")
 
 
   const handleChange = (e) =>{
@@ -76,10 +76,10 @@ const App = () => {
         <span>TODO</span>
         <div className ='iconContainer'>
           {
-            mode?
-            <IconSun onClick={()=>changeMode(!mode)} viewBox='0 0 26 26'/>
+            mode === "light"?
+            <IconSun onClick={()=>changeMode("dark")} viewBox='0 0 26 26'/>
             :
-            <IconMoon  onClick={()=>changeMode(!mode)} viewBox='0 0 26 26'/>
+            <IconMoon  onClick={()=>changeMode("light")} viewBox='0 0 26 26'/>
           }
         </div>
       </div>
