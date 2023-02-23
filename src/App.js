@@ -1,10 +1,12 @@
 import React,{useState} from 'react';
 import './App.scss';
 import HeaderLight from './img/bg-desktop-light.jpg'
-import {ReactComponent as IconCheck} from './img/icon-check.svg';
+import HeaderDark from './img/bg-desktop-dark.jpg'
+
 import {ReactComponent as IconMoon} from './img/icon-moon.svg';
 import {ReactComponent as IconSun} from './img/icon-sun.svg';
 import { v4 as uuidv4 } from 'uuid';
+import ItemList from './Components/ItemList';
 
 
 
@@ -14,23 +16,23 @@ const App = () => {
   const List =[
     {id:1,
       actitivyNote:"Camping",
-      status:"incomplete"
+      completed:false
     }
     ,
     {id:2,
       actitivyNote:"Living",
-      status:"incomplete"
+      completed:false
     }
     ,
     {id:3,
       actitivyNote:"Dying",
-      status:"incomplete"
+      completed:false
     }
   ]
 
   const [typing, changeTyping] = useState("")
-  const [existingtList, changeExistingList] = useState([])
-  const [mode, changeMode] = useState("dark")
+  const [existingtList, changeExistingList] = useState(List)
+  const [mode, changeMode] = useState("light")
 
 
   const handleChange = (e) =>{
@@ -49,7 +51,7 @@ const App = () => {
         {
           id:uuidv4(),
           actitivyNote:typing,
-          status:"incomplete"
+          completed:false
         }
       );
       changeExistingList(newList)
@@ -67,9 +69,14 @@ const App = () => {
  
 
   return (
-  <div className='container'>
+  <div className={mode === "light" ?'container light-theme':'container dark-theme'}>
     <div className='headerimageLight' >
-      <img src={HeaderLight}alt='header daylight mode'/>
+    {
+      mode === "light"?
+      <img src={HeaderLight}alt='header light mode'/>
+      :
+      <img src={HeaderDark}alt='header dark mode'/>
+    }
     </div>
     <div className='block'>
       <div className='header-top'>
@@ -77,9 +84,10 @@ const App = () => {
         <div className ='iconContainer'>
           {
             mode === "light"?
-            <IconSun onClick={()=>changeMode("dark")} viewBox='0 0 26 26'/>
+            <IconMoon  onClick={()=>changeMode("dark")} viewBox='0 0 26 26'/>
             :
-            <IconMoon  onClick={()=>changeMode("light")} viewBox='0 0 26 26'/>
+            <IconSun onClick={()=>changeMode("light")} viewBox='0 0 26 26'/>
+            
           }
         </div>
       </div>
@@ -94,7 +102,7 @@ const App = () => {
           onChange={handleChange}
           maxLength={40}
           type="text"
-          placeholder="Leave us your message here"
+          placeholder="Create a new Task"
           value={typing}
           onKeyPress={handleKeypress}/>
           <button 
@@ -108,14 +116,15 @@ const App = () => {
       <ul className='tasklist-container'>
       {existingtList.map((item, index)=>{
         return(
-          <li className='input-container-list crisis' key={item.id}>
+         /*  <li className='input-container-list crisis' key={item.id}>
             <div className='checkbox-container'>
               <div className='circle-container'></div>
             </div>
             <div className='input-container-inner'>
               <span>{item.actitivyNote}</span>
             </div>
-          </li>
+          </li> */
+          <ItemList item={item} key={item.id}/>
         )
       })}
         <div className='input-container-list' >
