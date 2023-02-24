@@ -1,5 +1,7 @@
 $color-gradient-start: hsl(192, 100%, 67%);
 $color-gradient-end: hsl(280, 87%, 65%);
+$color-crossed-light:hsl(233, 11%, 84%);
+$color-not-crossed-light:hsl(236, 9%, 61%);
 
 .container{
   position:relative;
@@ -46,7 +48,7 @@ $color-gradient-end: hsl(280, 87%, 65%);
     .iconContainer{
       display:grid;
       place-items: center;
-       border:1px red solid;
+       /* border:1px red solid; */
        svg{
         height:40px;
         width:40px;
@@ -110,19 +112,19 @@ $color-gradient-end: hsl(280, 87%, 65%);
             .circle-container{
               display:grid;
               place-items: center;
-             /*  border:1px #E6E6EA solid; */
+              border:1px #E6E6EA solid;
               border-radius: 50%;
               width:40%;
               height:40%;
-              background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
+             /*  background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end); */
               &:hover{
-                border:1px red solid;
+                
               }
-                svg{
+                img{
                 /* border:1px red solid; */
                 height:50%;
                 width:autO;
-                         }
+              }
             }
           }
           .input-container-inner{
@@ -149,7 +151,6 @@ $color-gradient-end: hsl(280, 87%, 65%);
                 color:blue;
                 font-weight: 600;
               }
-             
             }
           }
       }
@@ -160,6 +161,29 @@ $color-gradient-end: hsl(280, 87%, 65%);
 .crisis{
   border-bottom: 1px #E6E6EA solid;
 }
+
+.completed{
+  .circle-container{
+    background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
+  }
+  .input-container-inner{
+    span{
+      text-decoration: line-through;
+    }
+  }
+}
+
+.span-crossed{
+  span{
+    color:$color-crossed-light;
+  }
+}
+.span-not-crossed{
+  span{
+    color:$color-not-crossed-light;
+  }
+}
+
 
 
 .light-theme input{

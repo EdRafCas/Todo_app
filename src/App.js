@@ -31,7 +31,7 @@ const App = () => {
   ]
 
   const [typing, changeTyping] = useState("")
-  const [existingtList, changeExistingList] = useState(List)
+  const [existingList, changeExistingList] = useState(List)
   const [mode, changeMode] = useState("light")
 
 
@@ -45,7 +45,7 @@ const App = () => {
     e.preventDefault();
 
     if(typing.length > 0){
-      const newList = [...existingtList]
+      const newList = [...existingList]
       
       newList.push(
         {
@@ -114,7 +114,7 @@ const App = () => {
       </div>
 
       <ul className='tasklist-container'>
-      {existingtList.map((item, index)=>{
+      {existingList.map((item, index)=>{
         return(
          /*  <li className='input-container-list crisis' key={item.id}>
             <div className='checkbox-container'>
@@ -124,12 +124,16 @@ const App = () => {
               <span>{item.actitivyNote}</span>
             </div>
           </li> */
-          <ItemList item={item} key={item.id}/>
+          <ItemList 
+          existingList={existingList} 
+          changeExistingList={changeExistingList}
+          item={item} 
+          key={item.id}/>
         )
       })}
         <div className='input-container-list' >
           <div className='input-container-counter'>
-            <span>{existingtList.length} items left</span>
+            <span>{existingList.length} items left</span>
             <span> All </span>
             <span> Active</span>
             <span> Completed</span>
