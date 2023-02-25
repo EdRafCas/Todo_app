@@ -36,11 +36,7 @@ const ItemList = ({item, existingList, changeExistingList}) => {
             </div>
             <div className={classesTask}>
                   <span>{item.actitivyNote}</span>
-                  {item.completed?
-                  <span>true</span>
-                  :
-                  <span>false</span>
-                  }
+                  
             </div>
       </li>
 

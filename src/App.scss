@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+/* --color-very-light-gray: hsl(0, 0%, 98%);
+  --color-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --color-light-grayish-blue: hsl(233, 11%, 84%);
+  --color-dark-grayish-blue: hsl(236, 9%, 61%);
+  --color-very-dark-grayish-blue: hsl(235, 19%, 35%);
+  --color-gradient-start: hsl(192, 100%, 67%);
+  --color-gradient-end: hsl(280, 87%, 65%);
+
+
+  --color-very-dark-blue: hsl(235, 21%, 11%);
+  --color-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --color-dark-light-grayish-blue: hsl(234, 39%, 85%);
+  --color-dark-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --color-dark-dark-grayish-blue: hsl(234, 11%, 52%);
+  --color-dark-very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --color-dark-very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
+ */
 $color-gradient-start: hsl(192, 100%, 67%);
 $color-gradient-end: hsl(280, 87%, 65%);
 $color-crossed-light:hsl(233, 11%, 84%);
@@ -25,8 +44,9 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
   .block{
     width:1000px;
     height:1000px;
-    /* background-color: black; */
-   /*  border:1px red solid; */
+    /* box-shadow: -1px 5px 20px 10px rgba(37, 39, 60, 0.2);
+    -webkit-box-shadow: -1px 5px 20px 10px rgba(37, 39, 60, 0.2);
+    -moz-box-shadow: -1px 5px 20px 10px rgba(37, 39, 60, 0.2); */
     z-index:2;
     .header-top{
       display:flex;
@@ -40,7 +60,7 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
       span{
         font-size:60px;
         letter-spacing: 20px;
-        font-weight:600;
+        font-weight:700;
         color:#fff;
 
       }
@@ -86,7 +106,7 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
             font-size: 25px;
             font-weight: 500;
             letter-spacing: 1px;
-            font-family:"-apple-system", "BlinkMacSystemFont", 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+            font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
           }
         }
     }
@@ -132,8 +152,9 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
             padding:5px;
             span{
               font-size: 25px;
-              font-weight: 500;
+              font-weight: 400;
               letter-spacing: 1px;
+              font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
             }
           }
           .input-container-counter{
@@ -150,6 +171,7 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
               &:hover{
                 color:blue;
                 font-weight: 600;
+                
               }
             }
           }
