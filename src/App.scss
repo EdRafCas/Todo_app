@@ -17,16 +17,35 @@
   --color-dark-very-dark-grayish-blue: hsl(233, 14%, 35%);
   --color-dark-very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 $color-gradient-start: hsl(192, 100%, 67%);
 $color-gradient-end: hsl(280, 87%, 65%);
 $color-crossed-light:hsl(233, 11%, 84%);
 $color-not-crossed-light:hsl(236, 9%, 61%);
+$color-crossed-dark:hsl(233, 14%, 35%);
+$color-not-crossed-dark:hsl(234, 11%, 52%);
+
+$color-border-light:hsl(236, 9%, 61%);
+$color-border-dark:hsl(234, 11%, 52%);
+$color-background-light:hsl(0, 0%, 98%);
+$color-background-dark:hsl(235, 21%, 11%);
+$color-background-list-light:hsl(236, 33%, 92%);
+$color-background-list-dark:hsl(235, 24%, 19%);
+
+
+
 
 .container{
   position:relative;
   display:grid;
   place-items:center;
-  /* border:10px black solid; */
   height:100vh;
   width:100%;
   .headerimageLight{
@@ -34,12 +53,10 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
     top:0;
     left:0;
     z-index:1;
-    /* border:1px red solid; */
     width:100%;
     img{
       width:100%;
     }
-  /* border:1px red solid; */
     }
   .block{
     width:1000px;
@@ -68,7 +85,6 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
     .iconContainer{
       display:grid;
       place-items: center;
-       /* border:1px red solid; */
        svg{
         height:40px;
         width:40px;
@@ -82,19 +98,40 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
       box-shadow: 0 0 0 1px #E6E6EA;
       border-radius: 12px;
       margin-bottom:50px;
-        .checkbox-container{
+      .checkbox-container{
+        display:grid;
+        place-items:center;
+        /* border:1px red solid; */
+        width:100px;
+        height:100%;
+        .circle-container{
           display:grid;
-          place-items:center;
-          /* border:1px red solid; */
-          width:100px;
-          height:100%;
-          .circle-container{
-            border:1px #E6E6EA solid;
-            border-radius: 50%;
-            width:40%;
-            height:40%;
+          place-items: center;
+          background-color: $color-crossed-light;
+          border-radius: 50%;
+         /*  width:40%;
+          height:40%; */
+          padding:0.2rem;
+          &:hover{
+             background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
+          }
+          .checkbox{
+            display: flex;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: inherit;
+            background-color: $color-background-list-light;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            img{
+              /* border:1px red solid; */
+              height:50%;
+              width:autO;
+            }
           }
         }
+      }
         .input-container-inner{
           /* border:5px blue solid; */
           width:900px;
@@ -112,11 +149,9 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
     }
     .tasklist-container{
       border-radius: 20px;
-      /* border:1px red solid; */
       border-collapse: separate;
       overflow:hidden;
-      /* border: 1px grey solid; */
-      padding-left:0px;
+       padding-left:0px;
       box-shadow: 0 0 0 1px #E6E6EA;
       .input-container-list{
         height:100px;
@@ -132,23 +167,32 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
             .circle-container{
               display:grid;
               place-items: center;
-              border:1px #E6E6EA solid;
+              background-color: $color-crossed-light;
               border-radius: 50%;
-              width:40%;
-              height:40%;
-             /*  background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end); */
+             /*  width:40%;
+              height:40%; */
+              padding:0.2rem;
               &:hover{
-                
+                 background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
               }
+              .checkbox{
+                display: flex;
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: inherit;
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
                 img{
-                /* border:1px red solid; */
-                height:50%;
-                width:autO;
+                  /* border:1px red solid; */
+                  height:50%;
+                  width:autO;
+                }
               }
             }
           }
           .input-container-inner{
-            /* border:1px red solid; */
             padding:5px;
             span{
               font-size: 25px;
@@ -161,7 +205,6 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
             width:100%;
             display:flex;
             justify-content:space-around;
-            /* border:1px red solid; */
             padding:5px;
             span{
               font-size: 18px;
@@ -187,6 +230,9 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
 .completed{
   .circle-container{
     background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
+    .checkbox{
+      background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
+    }
   }
   .input-container-inner{
     span{
@@ -208,29 +254,65 @@ $color-not-crossed-light:hsl(236, 9%, 61%);
 
 
 
+.container.light-theme{
+  
+  .tasklist-container{
+    .span-crossed{
+      span{
+        color:$color-crossed-light;
+      }
+    }
+    .span-not-crossed{
+      span{
+        color:$color-not-crossed-light;
+      }
+    }
+  }
+}
+
+.container.dark-theme{
+  .tasklist-container{
+    .span-crossed{
+      span{
+        color:$color-crossed-dark;
+      }
+    }
+    .span-not-crossed{
+      span{
+        color:$color-not-crossed-dark;
+      }
+    }
+  }
+}
+
+.light-theme {
+  background-color: $color-background-light;
+}
+
 .light-theme input{
   color: #000;
 }
 .light-theme .input-container{
-  background-color: #fff;
+  background-color: $color-background-list-light
 }
 .light-theme .input-container-list{
   background-color: #fff;
 }
 
 
+
 .dark-theme span{
   color:#fff;
 }
 .dark-theme {
-  background-color: #000;
+  background-color: $color-background-dark;
 }
 .dark-theme input{
   color: #fff;
 }
 .dark-theme .input-container{
-  background-color: #000;
+  background-color: $color-background-list-dark;
 }
 .dark-theme .input-container-list{
-  background-color: #000;
+  background-color: $color-background-list-dark;
 }

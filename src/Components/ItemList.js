@@ -29,9 +29,9 @@ const ItemList = ({item, existingList, changeExistingList}) => {
       <li className={classes} >
             <div className='checkbox-container'>
                   <div className='circle-container'  onClick={handleComplete} >
-                  {checkIcon}
-                        {/* <IconCheck viewBox='0 0 10 10'/> */}
-                        
+                        <span className='checkbox'>
+                        {checkIcon}
+                        </span>  
                   </div>
             </div>
             <div className={classesTask}>

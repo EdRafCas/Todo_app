@@ -92,9 +92,11 @@ const App = () => {
         </div>
       </div>
       <div className='input-container'>
-        <div className='checkbox-container'>
-          <div className='circle-container'></div>
-        </div>
+      <div className='checkbox-container'>
+      <div className='circle-container'>
+            <span className='checkbox'>            </span>  
+      </div>
+            </div>
         <div className='input-container-inner'>
          <input
           name="task_box"
@@ -112,25 +114,33 @@ const App = () => {
           </button>
         </div>
       </div>
-
       <ul className='tasklist-container'>
-      {existingList.map((item, index)=>{
-        return(
-         /*  <li className='input-container-list crisis' key={item.id}>
-            <div className='checkbox-container'>
-              <div className='circle-container'></div>
-            </div>
-            <div className='input-container-inner'>
-              <span>{item.actitivyNote}</span>
-            </div>
-          </li> */
-          <ItemList 
-          existingList={existingList} 
-          changeExistingList={changeExistingList}
-          item={item} 
-          key={item.id}/>
-        )
-      })}
+      {existingList.length >1 ?
+        <>
+          {existingList.map((item, index)=>{
+              return(
+              /*  <li className='input-container-list crisis' key={item.id}>
+                  <div className='checkbox-container'>
+                    <div className='circle-container'></div>
+                  </div>
+                  <div className='input-container-inner'>
+                    <span>{item.actitivyNote}</span>
+                  </div>
+                </li> */
+                <ItemList 
+                existingList={existingList} 
+                changeExistingList={changeExistingList}
+                item={item} 
+                key={item.id}/>
+              )
+            })
+          }
+        </>
+      :
+      <span>
+        there is nothing here
+      </span>>
+      }
         <div className='input-container-list' >
           <div className='input-container-counter'>
             <span>{existingList.length} items left</span>
