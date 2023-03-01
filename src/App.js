@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import './App.scss';
 import HeaderLight from './img/bg-desktop-light.jpg'
 import HeaderDark from './img/bg-desktop-dark.jpg'
@@ -13,10 +13,11 @@ import ItemList from './Components/ItemList';
 
 const App = () => {
 
+
   const List =[
     {id:1,
       actitivyNote:"Camping",
-      completed:false
+      completed:true
     }
     ,
     {id:2,
@@ -33,7 +34,14 @@ const App = () => {
   const [typing, changeTyping] = useState("")
   const [existingList, changeExistingList] = useState(List)
   const [mode, changeMode] = useState("light")
+  const [countItemsLeft, changeCountItemsLeft] = useState(0)
 
+  useEffect(()=>{
+    const nonCompletedItems = existingList.filter((item) => !item.completed);
+    changeCountItemsLeft(nonCompletedItems.length)
+    /* console.log(nonCompletedItems.length) */
+
+  }, [existingList])
 
   const handleChange = (e) =>{
     if(e.target.name==="task_box"){
@@ -61,7 +69,6 @@ const App = () => {
   }
 
   const handleKeypress = (e) => {
-    
     if (e.key === "Enter") {
       handleAdd(e);
     }
@@ -137,13 +144,13 @@ const App = () => {
           }
         </>
       :
-      <span>
-        there is nothing here
-      </span>>
+      <p className="text">
+        There is nothing here
+      </p>
       }
         <div className='input-container-list' >
           <div className='input-container-counter'>
-            <span>{existingList.length} items left</span>
+            <span>{countItemsLeft} items left</span>
             <span> All </span>
             <span> Active</span>
             <span> Completed</span>

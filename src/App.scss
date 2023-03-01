@@ -120,7 +120,7 @@ $color-background-list-dark:hsl(235, 24%, 19%);
             width: 2.4rem;
             height: 2.4rem;
             border-radius: inherit;
-            background-color: $color-background-list-light;
+            /* background-color: white; */
             justify-content: center;
             align-items: center;
             cursor: pointer;
@@ -180,7 +180,7 @@ $color-background-list-dark:hsl(235, 24%, 19%);
                 width: 2.4rem;
                 height: 2.4rem;
                 border-radius: inherit;
-                background-color: white;
+                /* background-color: white; */
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
@@ -227,6 +227,8 @@ $color-background-list-dark:hsl(235, 24%, 19%);
   border-bottom: 1px #E6E6EA solid;
 }
 
+
+
 .completed{
   .circle-container{
     background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
@@ -255,7 +257,23 @@ $color-background-list-dark:hsl(235, 24%, 19%);
 
 
 .container.light-theme{
+  .circle-container{
+   
+    .checkbox{
+      background-color: white;
+    }
+  }
   
+  .text {
+    padding: 2rem;
+    background-color:$color-background-light;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
+    color:$color-not-crossed-light;
+    border-bottom: 1px solid $color-crossed-light;
+  }
   .tasklist-container{
     .span-crossed{
       span{
@@ -271,6 +289,22 @@ $color-background-list-dark:hsl(235, 24%, 19%);
 }
 
 .container.dark-theme{
+  .circle-container{
+   
+    .checkbox{
+      background-color: $color-background-list-dark;
+    }
+  }
+  .text {
+    padding: 2rem;
+    background-color: $color-background-list-dark;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
+    color:$color-not-crossed-dark;
+    border-bottom: 1px solid $color-border-dark;
+  }
   .tasklist-container{
     .span-crossed{
       span{
@@ -293,7 +327,7 @@ $color-background-list-dark:hsl(235, 24%, 19%);
   color: #000;
 }
 .light-theme .input-container{
-  background-color: $color-background-list-light
+  background-color: $color-background-light;
 }
 .light-theme .input-container-list{
   background-color: #fff;

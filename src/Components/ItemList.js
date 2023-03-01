@@ -5,21 +5,22 @@ import IconCheck2 from '../img/icon-check.svg'
 import '../App.scss'
 
 const ItemList = ({item, existingList, changeExistingList}) => {
-      const [mutableItem, changeMutableItem] = useState(item)
+      const [mutableList, changeMutableList] = useState(item)
 
-      const classes = mutableItem.completed ? "input-container-list crisis completed" :"input-container-list crisis ";
+      const classes = mutableList.completed ? "input-container-list crisis completed" :"input-container-list crisis ";
 
-      const classesTask = mutableItem.completed ? "input-container-inner span-crossed" :"input-container-inner span-not-crossed";
+      const classesTask = mutableList.completed ? "input-container-inner span-crossed" :"input-container-inner span-not-crossed";
 
       const handleComplete =()=>{
-            changeMutableItem({...item, completed:!mutableItem.completed});
+            changeMutableList({...mutableList, completed:!mutableList.completed});
             const updateExistingList = existingList.map((listed)=>
             listed.id === item.id ? {...listed, completed: !listed.completed} : listed
             )
             changeExistingList(updateExistingList);
+            /* console.log(updateExistingList) */
       }
 
-      const checkIcon = mutableItem.completed? (
+      const checkIcon = mutableList.completed? (
             <img src={IconCheck2} alt={"Completed"}/>
       ) : ("");
 
