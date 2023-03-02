@@ -101,7 +101,6 @@ $color-background-list-dark:hsl(235, 24%, 19%);
       .checkbox-container{
         display:grid;
         place-items:center;
-        /* border:1px red solid; */
         width:100px;
         height:100%;
         .circle-container{
@@ -109,8 +108,6 @@ $color-background-list-dark:hsl(235, 24%, 19%);
           place-items: center;
           background-color: $color-crossed-light;
           border-radius: 50%;
-         /*  width:40%;
-          height:40%; */
           padding:0.2rem;
           &:hover{
              background-image: linear-gradient(to bottom right, $color-gradient-start, $color-gradient-end);
@@ -204,18 +201,14 @@ $color-background-list-dark:hsl(235, 24%, 19%);
           .input-container-counter{
             width:100%;
             display:flex;
-            justify-content:space-around;
-            padding:5px;
+            justify-content:space-between;
+            padding:45px;
             span{
-              font-size: 18px;
+              font-size: 20px;
               font-weight: 400;
               letter-spacing: 1px;
+              font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
               cursor: pointer;
-              &:hover{
-                color:blue;
-                font-weight: 600;
-                
-              }
             }
           }
       }
@@ -257,8 +250,11 @@ $color-background-list-dark:hsl(235, 24%, 19%);
 
 
 .container.light-theme{
+
+  .input-container{
+    background-color: white;
+  }
   .circle-container{
-   
     .checkbox{
       background-color: white;
     }

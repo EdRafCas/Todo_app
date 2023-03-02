@@ -32,9 +32,12 @@ const App = () => {
   ]
 
   const [typing, changeTyping] = useState("")
-  const [existingList, changeExistingList] = useState(List)
   const [mode, changeMode] = useState("light")
   const [countItemsLeft, changeCountItemsLeft] = useState(0)
+  const [existingList, changeExistingList] = useState(List)
+  const [filter, changeFilter] = useState("all")
+  const [filterList, changeFilterList] =useState(existingList)
+
 
   useEffect(()=>{
     const nonCompletedItems = existingList.filter((item) => !item.completed);
@@ -99,13 +102,13 @@ const App = () => {
         </div>
       </div>
       <div className='input-container'>
-      <div className='checkbox-container'>
-      <div className='circle-container'>
-            <span className='checkbox'>            </span>  
-      </div>
-            </div>
+        <div className='checkbox-container'>
+          <div className='circle-container'>
+                <span className='checkbox'></span>  
+          </div>
+        </div>
         <div className='input-container-inner'>
-         <input
+          <input
           name="task_box"
           id="task_box"
           onChange={handleChange}
