@@ -38,6 +38,7 @@ $color-background-light:hsl(0, 0%, 98%);
 $color-background-dark:hsl(235, 21%, 11%);
 $color-background-list-light:hsl(236, 33%, 92%);
 $color-background-list-dark:hsl(235, 24%, 19%);
+$color-hover-list-dark:hsl(237, 14%, 26%);
 
 
 
@@ -221,6 +222,20 @@ $color-background-list-dark:hsl(235, 24%, 19%);
 }
 
 
+.btn-filter{
+  font-size:22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
+
+}
+.btn-filter.active{
+  font-weight:700;
+
+}
+  
+
 
 .completed{
   .circle-container{
@@ -250,6 +265,14 @@ $color-background-list-dark:hsl(235, 24%, 19%);
 
 
 .container.light-theme{
+  .input-container-list{
+    span{
+      color:$color-border-light
+    }
+  }
+  .btn-filter{
+    color:$color-border-light
+  }
 
   .input-container{
     background-color: white;
@@ -285,6 +308,22 @@ $color-background-list-dark:hsl(235, 24%, 19%);
 }
 
 .container.dark-theme{
+  .input-container-list{
+    span{
+      color:$color-border-dark;
+    }
+  }
+  .btn-filter{
+    color:$color-border-dark;
+  }
+  .btn-filter:hover{
+    color:$color-hover-list-dark;
+  }
+
+  .btn-filter.active{
+    color:$color-gradient-start
+  }
+
   .circle-container{
    
     .checkbox{

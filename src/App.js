@@ -44,7 +44,21 @@ const App = () => {
     changeCountItemsLeft(nonCompletedItems.length)
     /* console.log(nonCompletedItems.length) */
 
-  }, [existingList])
+    const handleFilter =()=>{
+      switch (filter) {
+        case "active":
+          return changeFilterList(existingList.filter((item) => !item.completed));
+        
+        case "completed":
+          return changeFilterList(existingList.filter((item) => item.completed));
+
+        default:
+          return changeFilterList(existingList);
+      }
+    }
+    handleFilter();
+
+  }, [existingList, filter])
 
   const handleChange = (e) =>{
     if(e.target.name==="task_box"){
@@ -76,7 +90,15 @@ const App = () => {
       handleAdd(e);
     }
   };
- 
+
+  const handleClick = (status) =>{
+    changeFilter(status)
+  }
+  
+  const clearCompleted = () => {
+    changeExistingList(existingList.filter((item) => !item.completed));
+    changeFilter("all");
+  }
 
   return (
   <div className={mode === "light" ?'container light-theme':'container dark-theme'}>
@@ -125,9 +147,9 @@ const App = () => {
         </div>
       </div>
       <ul className='tasklist-container'>
-      {existingList.length >1 ?
+      {filterList.length > 0 ?
         <>
-          {existingList.map((item, index)=>{
+          {filterList.map((item, index)=>{
               return(
               /*  <li className='input-container-list crisis' key={item.id}>
                   <div className='checkbox-container'>
@@ -154,10 +176,10 @@ const App = () => {
         <div className='input-container-list' >
           <div className='input-container-counter'>
             <span>{countItemsLeft} items left</span>
-            <span> All </span>
-            <span> Active</span>
-            <span> Completed</span>
-            <span> Clear Completed</span>
+            <button className={filter==='all'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("all")}> All </button>
+            <button className={filter==='active'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("active")}> Active</button>
+            <button className={filter==='completed'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("completed")}> Completed</button>
+            <button className={"btn-filter"} onClick={clearCompleted}> Clear Completed</button>
           </div>
         </div>
       </ul>
