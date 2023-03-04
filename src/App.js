@@ -72,7 +72,7 @@ const App = () => {
     if(typing.length > 0){
       const newList = [...existingList]
       
-      newList.push(
+      newList.unshift(
         {
           id:uuidv4(),
           actitivyNote:typing,
