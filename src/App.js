@@ -102,89 +102,91 @@ const App = () => {
 
   return (
   <div className={mode === "light" ?'container light-theme':'container dark-theme'}>
-    <div className='headerimageLight' >
-    {
-      mode === "light"?
-      <img src={HeaderLight}alt='header light mode'/>
-      :
-      <img src={HeaderDark}alt='header dark mode'/>
-    }
-    </div>
-    <div className='block'>
-      <div className='header-top'>
-        <span>TODO</span>
-        <div className ='iconContainer'>
-          {
-            mode === "light"?
-            <IconMoon  onClick={()=>changeMode("dark")} viewBox='0 0 26 26'/>
-            :
-            <IconSun onClick={()=>changeMode("light")} viewBox='0 0 26 26'/>
-            
-          }
-        </div>
+    <div className='innerContent'>
+      <div className='headerimageLight' >
+     {/*  {
+        mode === "light"?
+        <img src={HeaderLight}alt='header light mode'/>
+        :
+        <img src={HeaderDark}alt='header dark mode'/>
+      } */}
       </div>
-      <div className='input-container'>
-        <div className='checkbox-container'>
-          <div className='circle-container'>
-                <span className='checkbox'></span>  
+      <div className='block'>
+        <div className='header-top'>
+          <span>TODO</span>
+          <div className ='iconContainer'>
+            {
+              mode === "light"?
+              <IconMoon  onClick={()=>changeMode("dark")} viewBox='0 0 26 26'/>
+              :
+              <IconSun onClick={()=>changeMode("light")} viewBox='0 0 26 26'/>
+              
+            }
           </div>
         </div>
-        <div className='input-container-inner'>
-          <input
-          name="task_box"
-          id="task_box"
-          onChange={handleChange}
-          maxLength={40}
-          type="text"
-          placeholder="Create a new Task"
-          value={typing}
-          onKeyPress={handleKeypress}/>
-          <button 
-            type="submit"
-            onClick={handleAdd}>
-            sent
-          </button>
-        </div>
-      </div>
-      <ul className='tasklist-container'>
-      {filterList.length > 0 ?
-        <>
-          {filterList.map((item, index)=>{
-              return(
-              /*  <li className='input-container-list crisis' key={item.id}>
-                  <div className='checkbox-container'>
-                    <div className='circle-container'></div>
-                  </div>
-                  <div className='input-container-inner'>
-                    <span>{item.actitivyNote}</span>
-                  </div>
-                </li> */
-                <ItemList 
-                existingList={existingList} 
-                changeExistingList={changeExistingList}
-                item={item} 
-                key={item.id}/>
-              )
-            })
-          }
-        </>
-      :
-      <p className="text">
-        There is nothing here
-      </p>
-      }
-        <div className='input-container-list' >
-          <div className='input-container-counter'>
-            <span>{countItemsLeft} items left</span>
-            <button className={filter==='all'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("all")}> All </button>
-            <button className={filter==='active'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("active")}> Active</button>
-            <button className={filter==='completed'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("completed")}> Completed</button>
-            <button className={"btn-filter"} onClick={clearCompleted}> Clear Completed</button>
+        <div className='input-container'>
+          <div className='checkbox-container'>
+            <div className='circle-container'>
+                  <span className='checkbox'></span>  
+            </div>
+          </div>
+          <div className='input-container-inner'>
+            <input
+            name="task_box"
+            id="task_box"
+            onChange={handleChange}
+            maxLength={40}
+            type="text"
+            placeholder="Create a new Task"
+            value={typing}
+            onKeyPress={handleKeypress}/>
+            <button 
+              type="submit"
+              onClick={handleAdd}>
+              sent
+            </button>
           </div>
         </div>
-      </ul>
+        <ul className='tasklist-container'>
+        {filterList.length > 0 ?
+          <>
+            {filterList.map((item, index)=>{
+                return(
+                /*  <li className='input-container-list crisis' key={item.id}>
+                    <div className='checkbox-container'>
+                      <div className='circle-container'></div>
+                    </div>
+                    <div className='input-container-inner'>
+                      <span>{item.actitivyNote}</span>
+                    </div>
+                  </li> */
+                  <ItemList 
+                  existingList={existingList} 
+                  changeExistingList={changeExistingList}
+                  item={item} 
+                  key={item.id}/>
+                )
+              })
+            }
+          </>
+        :
+        <p className="text">
+          There is nothing here
+        </p>
+        }
+          <div className='input-container-list' >
+            <div className='input-container-counter'>
+              <span>{countItemsLeft} items left</span>
+              <button className={filter==='all'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("all")}> All </button>
+              <button className={filter==='active'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("active")}> Active</button>
+              <button className={filter==='completed'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("completed")}> Completed</button>
+              <button className={"btn-filter"} onClick={clearCompleted}> Clear Completed</button>
+            </div>
+          </div>
+        </ul>
 
-      
+        
+      </div>
     </div>
   </div>
   );
