@@ -103,14 +103,14 @@ const App = () => {
   return (
   <div className={mode === "light" ?'container light-theme':'container dark-theme'}>
     <div className='innerContent'>
-      <div className='headerimageLight' >
-     {/*  {
+      {/* <div className='headerimageLight' >
+      {
         mode === "light"?
         <img src={HeaderLight}alt='header light mode'/>
         :
         <img src={HeaderDark}alt='header dark mode'/>
-      } */}
-      </div>
+      }
+      </div> */}
       <div className='block'>
         <div className='header-top'>
           <span>TODO</span>
@@ -184,7 +184,11 @@ const App = () => {
             </div>
           </div>
         </ul>
-
+        <div className='input-container-list' >
+        <div className='input-container-counter'>
+          <span>hello</span>
+        </div>
+        </div>
         
       </div>
     </div>

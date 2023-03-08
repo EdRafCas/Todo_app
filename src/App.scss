@@ -61,9 +61,12 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
   flex-direction:column;
   justify-content: flex-start;
   align-items: center;
-  height:100%;
   width:100%;
+  min-width:375px;
   min-height:100vh;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
   .innerContent{
     display: flex;
     flex-direction:column;
@@ -79,12 +82,15 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
       position:absolute;
       top:0;
       z-index:1;
-      height:200px;
+      height:30rem;
       width:100%;
-      background-image: url(./img/bg-desktop-light.jpg);
-      img{
-        width:100%;
-      }
+      /* background-image: url(./img/bg-desktop-light.jpg);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+        img{ 
+          width:100%;
+        }*/
       }
     .block{
       max-width: 54rem;
@@ -304,7 +310,10 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
   }
 }
 
+
+/* -----------LIGHT THEME----------- */
 .container.light-theme{
+  background-image: url(./img/bg-desktop-light.jpg);
   .input-container-list{
     span{
       color:$color-border-light
@@ -352,8 +361,22 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
     }
   }
 }
+.light-theme {
+  background-color: $color-background-light;
+}
 
+.light-theme input{
+  color: #000;
+}
+.light-theme .input-container{
+  background-color: $color-background-light;
+}
+.light-theme .input-container-list{
+  background-color: #fff;
+}
+/* -----------DARK THEME----------- */
 .container.dark-theme{
+  background-image: url(/img/bg-desktop-dark.jpg);
   .input-container-list{
     span{
       color:$color-border-dark;
@@ -407,22 +430,6 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
   }
 }
 
-.light-theme {
-  background-color: $color-background-light;
-}
-
-.light-theme input{
-  color: #000;
-}
-.light-theme .input-container{
-  background-color: $color-background-light;
-}
-.light-theme .input-container-list{
-  background-color: #fff;
-}
-
-
-
 .dark-theme span{
   color:#fff;
 }
@@ -445,7 +452,16 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
 
   .container{
     padding:2rem;
+    .innerContent{
+      padding-top:5rem;
+    }
   }
 
+  .container.light-theme{
+    background-image: url(./img/bg-mobile-light.jpg);
+  }
+  .container.dark-theme{
+    background-image: url(./img/bg-mobile-dark.jpg);
+  }
 
 }
