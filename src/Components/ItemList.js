@@ -7,7 +7,7 @@ import '../App.scss'
 const ItemList = ({item, existingList, changeExistingList}) => {
       const [mutableList, changeMutableList] = useState(item)
 
-      const classes = mutableList.completed ? "input-container-list crisis completed" :"input-container-list crisis ";
+      const classes = mutableList.completed ? "input-container-list itemlist completed" :"input-container-list itemlist ";
 
       const classesTask = mutableList.completed ? "input-container-inner span-crossed" :"input-container-inner span-not-crossed";
 

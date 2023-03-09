@@ -177,20 +177,24 @@ const App = () => {
           <div className='input-container-list' >
             <div className='input-container-counter'>
               <span>{countItemsLeft} items left</span>
-              <button className={filter==='all'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("all")}> All </button>
-              <button className={filter==='active'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("active")}> Active</button>
-              <button className={filter==='completed'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("completed")}> Completed</button>
+              <div className='filter-mobile-desktop'>
+                <button className={filter==='all'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("all")}> All </button>
+                <button className={filter==='active'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("active")}> Active</button>
+                <button className={filter==='completed'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("completed")}> Completed</button>
+              </div>
               <button className={"btn-filter"} onClick={clearCompleted}> Clear Completed</button>
             </div>
           </div>
         </ul>
-        <div className='input-container-list' >
-        <div className='input-container-counter'>
-          <span>hello</span>
-        </div>
-        </div>
+        
+        
         
       </div>
+      <div className='filter-mobile' >
+        <button className={filter==='all'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("all")}> All </button>
+        <button className={filter==='active'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("active")}> Active</button>
+        <button className={filter==='completed'? "btn-filter active": "btn-filter"} onClick={()=> handleClick("completed")}> Completed</button>
+        </div>
     </div>
   </div>
   );
