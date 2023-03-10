@@ -129,7 +129,7 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
           .circle-container{
             display:grid;
             place-items: center;
-            background-color: $color-crossed-light;
+            /* background-color: $color-crossed-light; */
             border-radius: 50%;
             padding:0.2rem;
             &:hover{
@@ -184,7 +184,6 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
         border-collapse: separate;
         overflow:hidden;
         padding-left:0px;
-
         margin-bottom: 2.8rem;
         .input-container-list{
           height:6rem;
@@ -195,13 +194,12 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
               display:grid;
               place-items:center;
               /* border:1px red solid; */
-
               min-width:6rem;
               height:100%;
               .circle-container{
                 display:grid;
                 place-items: center;
-                background-color: $color-crossed-light;
+                /* background-color: $color-crossed-light; */
                 border-radius: 50%;
               /*  width:40%;
                 height:40%; */
@@ -289,25 +287,16 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
   justify-content: space-around;
 }
 
-
-
-
-
-
 .btn-filter{
   font-size:1.2rem;
   border: none;
   background: transparent;
   cursor: pointer;
   font-family:"Josefin Sans", sans-serif, "Courier New", Courier, monospace; 
-
 }
 .btn-filter.active{
   font-weight:700;
-
 }
-  
-
 
 .completed{
   .circle-container{
@@ -352,6 +341,7 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
     background-color: white;
   }
   .circle-container{
+    background-color: $color-crossed-light;
     .checkbox{
       background-color: white;
     }
@@ -436,7 +426,7 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
   }
 
   .circle-container{
-   
+    background-color: $color-hover-list-dark;
     .checkbox{
       background-color: $color-background-list-dark;
     }
@@ -471,6 +461,7 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
     }
   }
 }
+
 
 .dark-theme .itemlist{
   border-bottom: 0.1rem $color-hover-list-dark solid;
