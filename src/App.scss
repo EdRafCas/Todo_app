@@ -335,7 +335,14 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
   .btn-filter{
     color:$color-border-light
   }
+  .btn-filter:hover{
+    color:$color-hover-list-dark;
+  }
+  .btn-filter.active{
+    color:$color-gradient-end;
+  }
 
+  
   .input-container{
    
     background-color: white;
@@ -418,13 +425,13 @@ $color-hover-list-dark:hsl(237, 14%, 26%);
     color:$color-border-dark;
   }
   .btn-filter:hover{
-    color:$color-hover-list-dark;
+    color:$color-background-list-light;
   }
-
   .btn-filter.active{
-    color:$color-gradient-start
+    color:$color-gradient-start;
   }
 
+  
   .circle-container{
     background-color: $color-hover-list-dark;
     .checkbox{
